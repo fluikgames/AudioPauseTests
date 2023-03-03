@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] Button stopAudio;
     [SerializeField] Button pauseGame;
     [SerializeField] Button unpauseGame;
+    [SerializeField] Button togglePlayWhilePaused;
     [SerializeField] Text statusText;
     [SerializeField] Text timerText;
     [SerializeField] AudioSource audioSource;
@@ -49,5 +50,9 @@ public class AudioManager : MonoBehaviour
 
     public void OnUnPauseGameClick(){
         AudioListener.pause = false;
+    }
+
+    public void TogglePlayWhilePaused(){
+        audioSource.ignoreListenerPause = !audioSource.ignoreListenerPause;
     }
 }
